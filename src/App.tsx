@@ -1,5 +1,6 @@
 import './App.css'
 import React, { useState } from 'react';
+import Cell from './components/Cell/Cell.tsx';
 
 const App: React.FC = () => {
   const createItems = () => {
@@ -31,12 +32,6 @@ const App: React.FC = () => {
     setTries(0);
     setFound(false);
   };
-
-  const Cell = ({ hasItem, clicked, onClick }: { hasItem: boolean; clicked: boolean; onClick: () => void }) => (
-      <div className={`cell ${clicked ? 'clicked' : ''}`} onClick={onClick}>
-        {clicked && hasItem ? 'O' : ''}
-      </div>
-  );
 
   const GameBoard = ({ items, onCellClick }: { items: { hasItem: boolean; clicked: boolean }[]; onCellClick: (index: number) => void }) => (
       <div className="game-board">
