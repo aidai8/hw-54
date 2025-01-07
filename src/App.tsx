@@ -1,6 +1,6 @@
 import './App.css'
 import React, { useState } from 'react';
-import Cell from './components/Cell/Cell.tsx';
+import GameBoard from './components/GameBoard/GameBoard.tsx';
 
 const App: React.FC = () => {
   const createItems = () => {
@@ -32,14 +32,6 @@ const App: React.FC = () => {
     setTries(0);
     setFound(false);
   };
-
-  const GameBoard = ({ items, onCellClick }: { items: { hasItem: boolean; clicked: boolean }[]; onCellClick: (index: number) => void }) => (
-      <div className="game-board">
-        {items.map((item, index) => (
-            <Cell key={index} hasItem={item.hasItem} clicked={item.clicked} onClick={() => onCellClick(index)} />
-        ))}
-      </div>
-  );
 
   const TriesCounter = ({ tries }: { tries: number }) => <p>Tries: {tries}</p>;
 
