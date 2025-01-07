@@ -1,6 +1,7 @@
 import './App.css'
 import React, { useState } from 'react';
 import GameBoard from './components/GameBoard/GameBoard.tsx';
+import TriesCounter from './components/TriesCounter/TriesCounter.tsx';
 
 const App: React.FC = () => {
   const createItems = () => {
@@ -32,8 +33,6 @@ const App: React.FC = () => {
     setTries(0);
     setFound(false);
   };
-
-  const TriesCounter = ({ tries }: { tries: number }) => <p>Tries: {tries}</p>;
 
   const ResetButton = ({ onReset }: { onReset: () => void }) => <button onClick={onReset}>Reset</button>;
 
