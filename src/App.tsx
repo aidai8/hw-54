@@ -2,6 +2,8 @@ import './App.css'
 import React, { useState } from 'react';
 import GameBoard from './components/GameBoard/GameBoard.tsx';
 import TriesCounter from './components/TriesCounter/TriesCounter.tsx';
+import ResetButton from './components/ResetButton/ResetButton.tsx';
+
 
 const App: React.FC = () => {
   const createItems = () => {
@@ -33,8 +35,6 @@ const App: React.FC = () => {
     setTries(0);
     setFound(false);
   };
-
-  const ResetButton = ({ onReset }: { onReset: () => void }) => <button onClick={onReset}>Reset</button>;
 
   return (
       <div className="app">
